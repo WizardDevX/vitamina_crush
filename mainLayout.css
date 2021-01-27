@@ -109,6 +109,7 @@ img {
 
 #newGame, #showMove {
 	width: 12em;
+	font-size: .9em;
 }
 
 #DEBUG {
@@ -118,4 +119,20 @@ img {
 	left: 25px;
 	background-color: #ff4d4d;
 	opacity: 0.85;
+}
+
+.wrapper {
+	display: flex;
+}
+
+#human {
+	width: 100px;
+}
+
+@media screen and (min-width: 768px) {
+
+	#human {
+		width: 200px;
+	}
+
 }
