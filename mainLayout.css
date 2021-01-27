@@ -20,6 +20,7 @@ body {
 	vertical-align: middle;
 	font-weight: bold;
 	text-align: center;
+	overflow: hidden;
 }
 
 img {
