@@ -1,4 +1,9 @@
 var DEBUG = false;
+var MAX_POINTS = 40;
+
+function getPercentage(score) {
+	return ((score / MAX_POINTS) * 100).toFixed(0)
+}
 
 // By default, the first board loaded by your page will be the same 
 // each time you load (which is accomplished by "seeding" the random
@@ -142,26 +147,36 @@ $(board).on('remove', function(e, info) {
 $(board).on('scoreUpdate', function(e, info) {
 	// Your code here.
 	var scoreLabel = document.getElementById("scoreLabel");
+	let score = scoreLabel.innerText.split(" ")[0] 
 	let human = document.querySelector("#human");
 
-	$(scoreLabel).empty();
-	$(scoreLabel).append(info.score + " puntos");
-	
-	if(info.candy != undefined){
-		$(scoreLabel).css("background-color", info.candy.color);
-		$(human).css("fill", info.candy.color);
+	if (score == MAX_POINTS) {
+		alert('Has ganado')
+		$(scoreLabel).text('0 puntos / 0%')
+		ClearCanvas();
+		NewGame();
 		
-		if(info.candy.color == "yellow"){
-			$(scoreLabel).css("color", "gray");
+	} else {
+		$(scoreLabel).empty();
+		$(scoreLabel).append(`${info.score} puntos / ${getPercentage(score)}%`);
+		
+		if(info.candy != undefined){
+			$(scoreLabel).css("background-color", info.candy.color);
+			$(human).css("fill", info.candy.color);
+			
+			if(info.candy.color == "yellow"){
+				$(scoreLabel).css("color", "gray");
+			}
+			else{
+				$(scoreLabel).css("color", "white");
+			}
 		}
-		else{
-			$(scoreLabel).css("color", "white");
+		else {
+			$(scoreLabel).css({"background-color" : "lightgrey",
+								"color" : "black"});
 		}
 	}
-	else {
-		$(scoreLabel).css({"background-color" : "lightgrey",
-							"color" : "black"});
-	}
+
 });
 
 
@@ -438,8 +453,12 @@ function Crush(){
 
 
 function NewGame(){
+
+	var scoreLabel = document.getElementById("scoreLabel");
+	
 	board.clear();
 	board.resetScore();
+	$(scoreLabel).text('0 puntos / 0%')
 	rules.prepareNewGame();
 	let human = document.querySelector("#human");
 	$(human).css("fill", "#000");
