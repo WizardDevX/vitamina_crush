@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
 /* Copyright (c) 2017 MIT 6.813/6.831 course staff, all rights reserved.
  * Redistribution of original or derived work requires permission of course staff.
  */
@@ -11,16 +13,28 @@
 */
 /* Your css code here! */
 
+* {
+	font-family: "Courgette", cursive;
+}
+
 div {
 	/*border: 1px solid green;*/
 }
 
 body {
+	min-height: 100vh;
 	margin: auto;
 	vertical-align: middle;
 	font-weight: bold;
 	text-align: center;
 	overflow: hidden;
+	background: rgb(131, 58, 180);
+	background: linear-gradient(
+		180deg,
+		rgba(131, 58, 180, 1) 0%,
+		rgba(253, 29, 29, 1) 50%,
+		rgba(252, 176, 69, 1) 100%
+	);
 }
 
 img {
@@ -50,7 +64,9 @@ img {
 	background-color: #4889f0;
 }
 
-#firstColumn, #mainColumn, #lastColumn {
+#firstColumn,
+#mainColumn,
+#lastColumn {
 	margin: auto;
 	padding: 10px;
 }
@@ -61,7 +77,7 @@ img {
 
 #gameTitle {
 	font-weight: bold;
-	color: red;
+	color: #000; /* red */
 	font-size: 2.2rem;
 }
 
@@ -78,7 +94,8 @@ img {
 	width: 50px;
 }
 
-#moveInput:hover, #moveInput:focus {
+#moveInput:hover,
+#moveInput:focus {
 	box-shadow: 0 0 5px blue;
 }
 
@@ -104,14 +121,15 @@ img {
 	position: absolute;
 	top: -500px;
 	left: calc(50% - 160px);
-	background-color: white;
+	background-color: transparent /* white */;
 	width: 320px;
 	height: 500px;
 }
 
-#newGame, #showMove {
+#newGame,
+#showMove {
 	width: 12em;
-	font-size: .9em;
+	font-size: 0.9em;
 }
 
 #DEBUG {
@@ -132,9 +150,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-
 	#human {
 		width: 200px;
 	}
-
 }
