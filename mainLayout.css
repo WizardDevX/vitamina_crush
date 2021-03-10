@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spirax&display=swap");
 
 /* Copyright (c) 2017 MIT 6.813/6.831 course staff, all rights reserved.
  * Redistribution of original or derived work requires permission of course staff.
@@ -14,7 +14,7 @@
 /* Your css code here! */
 
 * {
-	font-family: "Courgette", cursive;
+	font-family: "Spirax", cursive;
 }
 
 div {
@@ -28,12 +28,13 @@ body {
 	font-weight: bold;
 	text-align: center;
 	overflow: hidden;
-	background: rgb(131, 58, 180);
+	background: rgb(29, 253, 171);
 	background: linear-gradient(
 		180deg,
-		rgba(131, 58, 180, 1) 0%,
-		rgba(253, 29, 29, 1) 50%,
-		rgba(252, 176, 69, 1) 100%
+		rgba(29, 253, 171, 1) 0%,
+		rgba(180, 137, 209, 1) 41%,
+		rgba(252, 176, 69, 1) 79%,
+		rgba(233, 220, 79, 1) 100%
 	);
 }
 
@@ -71,14 +72,46 @@ img {
 	padding: 10px;
 }
 
-#firstColumn {
+#firstColumn,
+.container {
 	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	min-height: 100vh;
 }
 
 #gameTitle {
 	font-weight: bold;
 	color: #000; /* red */
 	font-size: 2.2rem;
+	background: linear-gradient(
+		to right,
+		#28284b,
+		#0099ff,
+		#00ff00,
+		#ff3399,
+		#660c69
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: textAnimate 6s ease-in-out infinite;
+	background-size: 400% 100%;
+}
+
+@keyframes textAnimate {
+	0%,
+	100% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 100% 0;
+	}
 }
 
 #gameBoard {

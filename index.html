@@ -11,44 +11,48 @@ Collaborators: nobody
  */
 -->
 
-	<head>
-		<meta charset="utf-8">
-		<title>Vitamina Crush</title>
-		
-		<!-- Load style sheets -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
-		
-		<link rel="stylesheet" href="mainLayout.css">
-		
-		<!-- Use mobile-aware viewport -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
-		<!-- Load any supplemental Javascript libraries here -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js"></script>
-		<script src="candy.js"></script>
-		<script src="board.js"></script>
-		<script src="rules.js"></script>
-		<script src="handler.js"></script>
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>Vitamina Crush</title>
 
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6" id="firstColumn">
-						<div class="wrapper">
-							<div>
-								<h1 id="gameTitle">Vitamina Crush</h1>
-								<label id="scoreLabel">0 puntos/ 0%</label><br/>
-								<input class="btn btn-default" type="button" id="newGame" value="Nuevo Juego"><br/>
-								<input class="btn btn-default" type="button" id="showMove" value="Mostrar sugerencia">
-							</div>
-							<svg version="1.1" id="human" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							width="206.326px" height="206.326px" viewBox="0 0 206.326 206.326"
-							xml:space="preserve">
-								<g>
-									<g>
-										<path d="M104.265,117.959c-0.304,3.58,2.126,22.529,3.38,29.959c0.597,3.52,2.234,9.255,1.645,12.3
+	<!-- Load style sheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
+	<link rel="stylesheet" href="mainLayout.css">
+
+	<!-- Use mobile-aware viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Notification library -->
+	<link rel="stylesheet" href="lib/notiflix-2.7.0.min.css">
+	<script src="lib/notiflix-2.7.0.min.js"></script>
+
+	<!-- Load any supplemental Javascript libraries here -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js"></script>
+	<script src="candy.js"></script>
+	<script src="board.js"></script>
+	<script src="rules.js"></script>
+	<script src="handler.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6" id="firstColumn">
+				<div class="wrapper">
+					<div>
+						<h1 id="gameTitle">Vitamina Crush</h1>
+						<label id="scoreLabel">0 puntos/ 0%</label><br />
+						<input class="btn btn-default" type="button" id="newGame" value="Nuevo Juego"><br />
+						<input class="btn btn-default" type="button" id="showMove" value="Mostrar sugerencia">
+					</div>
+					<svg version="1.1" id="human" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="206.326px" height="206.326px"
+						viewBox="0 0 206.326 206.326" xml:space="preserve">
+						<g>
+							<g>
+								<path d="M104.265,117.959c-0.304,3.58,2.126,22.529,3.38,29.959c0.597,3.52,2.234,9.255,1.645,12.3
 											c-0.841,4.244-1.084,9.736-0.621,12.934c0.292,1.942,1.211,10.899-0.104,14.175c-0.688,1.718-1.949,10.522-1.949,10.522
 											c-3.285,8.294-1.431,7.886-1.431,7.886c1.017,1.248,2.759,0.098,2.759,0.098c1.327,0.846,2.246-0.201,2.246-0.201
 											c1.139,0.943,2.467-0.116,2.467-0.116c1.431,0.743,2.758-0.627,2.758-0.627c0.822,0.414,1.023-0.109,1.023-0.109
@@ -78,22 +82,22 @@ Collaborators: nobody
 											c0,0-3.836,7.892-1.379,8.05c0,0,0.192,0.523,1.023,0.109c0,0,1.327,1.37,2.761,0.627c0,0,1.328,1.06,2.463,0.116
 											c0,0,0.91,1.047,2.237,0.201c0,0,1.742,1.175,2.777-0.098c0,0,1.839,0.408-1.435-7.886c0,0-1.254-8.793-1.945-10.522
 											c-1.318-3.275-0.387-12.251-0.106-14.175c0.453-3.216,0.21-8.695-0.618-12.934c-0.606-3.038,1.035-8.774,1.641-12.3
-											c1.245-7.423,3.685-26.373,3.38-29.959l1.008,0.354C103.809,118.312,104.265,117.959,104.265,117.959z"/>
-									</g>
-								</g>
-							</svg> 
-						</div>
+											c1.245-7.423,3.685-26.373,3.38-29.959l1.008,0.354C103.809,118.312,104.265,117.959,104.265,117.959z" />
+							</g>
+						</g>
+					</svg>
 				</div>
-				
-				<div class="col-md-6" id="mainColumn">
-					<div id="cover"></div>
-					<div id="gameBoard"></div>
-					<canvas id="canvas" width="320" height="320">
-						<p>Canvas not supported on your browser.</p>
-					</canvas>
-				</div>
-				<!-- <div class="col-md-3" id="lastColumn"></div> -->
-				<!--
+			</div>
+
+			<div class="col-md-6" id="mainColumn">
+				<div id="cover"></div>
+				<div id="gameBoard"></div>
+				<canvas id="canvas" width="320" height="320">
+					<p>Canvas not supported on your browser.</p>
+				</canvas>
+			</div>
+			<!-- <div class="col-md-3" id="lastColumn"></div> -->
+			<!--
 				<div class="col-md-3" id="lastColumn">
 					<div class="col-md-12">
 						<form action="">
@@ -124,10 +128,17 @@ Collaborators: nobody
 					</div>
 				</div>
 				-->
-				
-			</div> <!-- class="row" -->
-		</div> <!-- class="container" -->
-	
-	</body>
+
+		</div> <!-- class="row" -->
+	</div> <!-- class="container" -->
+
+</body>
+
+<script>
+	Notiflix.Notify.Init({
+		position: "center-bottom",
+		timeout: 1000
+	})
+</script>
 
 </html>
