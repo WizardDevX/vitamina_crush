@@ -136,8 +136,10 @@ Collaborators: nobody
 
 <script>
 	Notiflix.Notify.Init({
-		position: "center-bottom",
-		timeout: 2000
+		position: window.innerWidth > 768 ? "center-top" : "center-bottom",
+		timeout: 3000,
+		useIcon: false,
+		width: "200px"
 	})
 </script>
 

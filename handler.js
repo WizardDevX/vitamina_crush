@@ -194,7 +194,7 @@ $(board).on("scoreUpdate", function (e, info) {
 			$(human).css("fill", info.candy.color);
 
 			if (prevFruit !== vitamins[info.candy.color].fruit) {
-				Notiflix.Notify.Info(
+				Notiflix.Notify.Warning(
 					`Fruta: ${vitamins[info.candy.color].fruit}, Vitaminas: ${
 						vitamins[info.candy.color].vitamins
 					}`
