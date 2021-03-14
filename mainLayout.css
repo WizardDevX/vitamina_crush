@@ -29,13 +29,11 @@ body {
 	text-align: center;
 	overflow: hidden;
 	background: rgb(29, 253, 171);
-	background: linear-gradient(
-		180deg,
-		rgba(29, 253, 171, 1) 0%,
-		rgba(180, 137, 209, 1) 41%,
-		rgba(252, 176, 69, 1) 79%,
-		rgba(233, 220, 79, 1) 100%
-	);
+	background: linear-gradient(180deg,
+			rgba(29, 253, 171, 1) 0%,
+			rgba(180, 137, 209, 1) 41%,
+			rgba(252, 176, 69, 1) 79%,
+			rgba(233, 220, 79, 1) 100%);
 }
 
 img {
@@ -45,6 +43,7 @@ img {
 .btn {
 	margin: 5px;
 	border: 1px solid #666666;
+	border-radius: 1.5em;
 	box-shadow: 1px 1px 5px gray;
 }
 
@@ -86,16 +85,15 @@ img {
 
 #gameTitle {
 	font-weight: bold;
-	color: #000; /* red */
+	color: #000;
+	/* red */
 	font-size: 2.2rem;
-	background: linear-gradient(
-		to right,
-		#28284b,
-		#0099ff,
-		#00ff00,
-		#ff3399,
-		#660c69
-	);
+	background: linear-gradient(to right,
+			#28284b,
+			#0099ff,
+			#00ff00,
+			#ff3399,
+			#660c69);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
@@ -104,6 +102,7 @@ img {
 }
 
 @keyframes textAnimate {
+
 	0%,
 	100% {
 		background-position: 0 0;
@@ -121,6 +120,17 @@ img {
 	height: 320px;
 	table-layout: fixed;
 	position: relative;
+}
+
+#gameBoard::before {
+	content: "";
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	right: -10px;
+	bottom: -10px;
+	background-color: #fff;
+	border-radius: 10px;
 }
 
 #moveInput {
@@ -154,7 +164,9 @@ img {
 	position: absolute;
 	top: -500px;
 	left: calc(50% - 160px);
-	background-color: transparent /* white */;
+	background-color: transparent
+		/* white */
+	;
 	width: 320px;
 	height: 500px;
 }
@@ -185,5 +197,9 @@ img {
 @media screen and (min-width: 768px) {
 	#human {
 		width: 200px;
+	}
+
+	#gameTitle {
+		font-size: 4.2rem;
 	}
 }
